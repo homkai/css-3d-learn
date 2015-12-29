@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>百度大凤巢重金招人，一起做不可逆的改变</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=640, user-scalable=no"/>
+    <meta name="x5-orientation" content="portrait">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+</head>
+<body>
+<style type="text/css">
+    body,div,ul,li,img,p,a,h1,h2,h3 {
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    html,body {
+        background: #000;
+        font-family: "微软雅黑", "黑体", "宋体", Helvetica, Verdana, sans-serif;
+        font-size: 14px;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+    }
+    ul,li {
+        list-style: none;
+        line-height: 0px;
+    }
+    #main{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 640px;
+        height: 100%;
+        overflow: hidden;
+    }
+    #main div {
+        background-size: 100% 100%;
+    }
+    #loading {
+        display: block;
+        background:#000;
+    }
+    #loading img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -60px 0 0 -60px;
+    }
+    #page {
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: relative;
+        z-index: 1;
+    }
+    #page-img {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #page-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .page-link {
+        position: absolute;
+        display: block;
+        z-index: 200;
+    }
+</style>
+<div id="main">
+    <div id="world"></div>
+</div>
+<div id="page">
+    <div id="page-img"></div>
+    <div id="page-nav"></div>
+</div>
+<div id="loading">
+    <img src="./img/loading.gif"/>
+</div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        window.shareData = {
+            link: 'http://fccp.baidu.com/zp2015/index.html',
+            title: '百度大凤巢重金招人',
+            desc: '一起做不可逆的改变',
+            img: {
+                url: 'img/share.jpg',
+                width: '200',
+                height: '200'
+            }
+        };
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                img_url: shareData.img.url,
+                img_width: shareData.img.width,
+                img_height: shareData.img.height,
+                link: shareData.link,
+                desc: shareData.desc,
+                title: shareData.title
+            }, function (res) {
+            });
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                img_url: shareData.img.url,
+                img_width: shareData.img.width,
+                img_height: shareData.img.height,
+                link: shareData.link,
+                desc: shareData.desc,
+                title: shareData.title
+            }, function (res) {
+            });
+        });
+    }, false);
+    window._t = '201512241739';
+</script>
+<script src="dist/zepto.js?_t=201512241739"></script>
+<!-- 线上环境，引用的js -->
+<script src="dist/build.js?_t=201512241739"></script>
+<!-- 开发环境，引用下面的js -->
+<!--<script src="js/css3d.min.js"></script>-->
+<!--<script src="js/jstween.js"></script>-->
+<!--<script src="js/preload.js"></script>-->
+<!--<script src="js/zepto.touch.js"></script>-->
+<!--<script src="js/images.data.js"></script>-->
+<!--<script src="js/main.js"></script>-->
+</body>
+</html>
