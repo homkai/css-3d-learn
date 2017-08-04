@@ -1,7 +1,7 @@
 # CSS3做微信3D动画学习
 
 - 工作需要，用CSS3做的一个3D动画
-- 效果参考（Chrome模拟器，或者微信打开）：http://kaige.homyit.net/fchr/
+- 效果参考（Chrome模拟器，或者微信打开）
 
 ## 快速使用
 
